@@ -14,6 +14,8 @@
         if (isset($nome)) {
             print "Essa linha não será 'printada' se $nome for 'NULL'";
         }
+
+        echo "<br><address><center> Lara Gorito Barbosa de Souza / Estudante / Técnico em Desenvolvimento de Sistemas </center></address>";
     ?>
 </body>
 </html>
