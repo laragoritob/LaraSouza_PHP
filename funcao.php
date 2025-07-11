@@ -19,6 +19,8 @@
         echo("$cmp<br>");
         echo("$index<br>");
         echo("$first");
+
+        echo "<br><address><center> Lara Gorito Barbosa de Souza / Estudante / Técnico em Desenvolvimento de Sistemas </center></address>";
     ?>
 </body>
 </html>

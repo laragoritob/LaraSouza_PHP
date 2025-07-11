@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> String </title>
 </head>
 <body>
     <?php
@@ -27,6 +27,8 @@
         
         echo "<h3>$frase_capital</h3>";
         echo "<h4>$frase_idade</h4>";
+
+        echo "<br><address><center> Lara Gorito Barbosa de Souza / Estudante / Técnico em Desenvolvimento de Sistemas </center></address>";
     ?>
 </body>
 </html>
