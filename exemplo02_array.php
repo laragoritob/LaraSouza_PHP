@@ -52,6 +52,8 @@
         echo "SLICE: "; 
         print_r($dividir);
         echo "<br/>";
+
+        echo "<br><br><br><address><center> Lara Gorito Barbosa de Souza / Estudante / Técnico em Desenvolvimento de Sistemas </center></address>";
     ?>
 </body>
 </html>
