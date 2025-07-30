@@ -22,7 +22,7 @@
             $msgErro = "Erro: Cliente não encontrado";
         }
     } else{
-        $msgErro = "Digite o ID do client para bsucar os dados";
+        $msgErro = "Digite o ID do cliente para buscar os dados";
     }
 ?>
 <!DOCTYPE html>
@@ -31,49 +31,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script>
         function habilitarEdicao(campo){
             document.getElementById(campo).removeAttribute("readonly");
         }
-     </script>
+    </script>
+
+    <style>
+        body{
+            background-color: rgb(255, 210, 210);
+        }
+
+        .container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 320px;
+            max-width: 380px;
+            width: 100%;
+            margin-left: 480px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-     <h2>Atualizar Cliente</h2>
+    <div class="container">
+        <h2>Atualizar Cliente</h2>
 
-     <?php if($msgErro): ?>
-      <p style="color:red;"> <?= htmlspecialchars($msgErro) ?> </p>
+        <?php if($msgErro): ?>
+        <p style="color:red;"> <?= htmlspecialchars($msgErro) ?> </p>
 
-      <form action="atualizarCliente.php" method="GET">
-        <label for="id">ID do cliente:</label>
-        <input type="number" id="id" name="id" required>
-            <button type="submit">Buscar</button>
-      </form>
+        <form action="atualizarCliente.php" method="GET">
+            <div class="form-group">
+                <label for="id" class="form-label">ID do cliente:</label>
+                <input type="number" id="id" name="id" class="form-control" required />
+            </div>
+                <br>
+                <center><button type="submit" class="btn btn-primary">Buscar</button></center>
+        </form>
+    </div>
+
       <?php else: ?>
         <form action="processarAtualizacao.php" method="POST">
             <input type="hidden" name="id_cliente" 
             value="<?= htmlspecialchars($cliente['id_cliente']) ?>">
 
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" 
+            <br>
+
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" id="nome" name="nome" class="form-control"
             value="<?= htmlspecialchars($cliente['nome']) ?>" 
             readonly onclick="habilitarEdicao('nome')">
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" 
+            <br>
+
+            <label for="endereco" class="form-label">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" class="form-control"
             value="<?= htmlspecialchars($cliente['endereco']) ?>" 
             readonly onclick="habilitarEdicao('endereco')">
 
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" 
+            <br>
+
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" class="form-control"
             value="<?= htmlspecialchars($cliente['telefone']) ?>" 
             readonly onclick="habilitarEdicao('telefone')">
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" 
+            <br>
+
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" id="email" name="email" class="form-control"
             value="<?= htmlspecialchars($cliente['email']) ?>" 
             readonly onclick="habilitarEdicao('email')">
 
-            <button type="submit">Atualizar cliente</button>
+            <br>
+
+            <center><button type="submit" class="btn btn-primary">Atualizar Cliente</button></center>
         </form>
       <?php endif; ?>
 </body>

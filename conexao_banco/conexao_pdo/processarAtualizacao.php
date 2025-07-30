@@ -1,6 +1,13 @@
+<style>
+        body{
+            background-color: rgb(255, 210, 210);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+</style>
+
 <?php 
     require 'conexao.php';
-
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conexao = conectarBanco();
 
