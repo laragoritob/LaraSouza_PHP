@@ -1,5 +1,5 @@
 <?php
-    require_once("conecta.php");
+    require_once('conecta.php');
 
 // Obtém os dados enviados pelo formulário
     $evento = $_POST['evento'];
@@ -11,7 +11,7 @@
 
 // Verifica se o arquivo foi enviado corretamente
     if (!empty($imagem) && $tamanho > 0) {
-        // Le o conteúdo do arquivo
+        // Lê o conteúdo do arquivo
         $fp = fopen($imagem, "rb");
         $conteudo = fread($fp, filesize($imagem));
         fclose($fp);
@@ -25,7 +25,7 @@
         $resultado = mysqli_query($conexao, $queryInsercao);
 
         // Verifica se a inserção foi bem-sucedida
-        if (resultado) {
+        if ($resultado) {
             echo "Imagem inserida com sucesso!";
             header("Location: index.php");
             exit();
